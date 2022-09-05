@@ -1,0 +1,18 @@
+    1  sudo apt update
+    2  sudo apt upgrade
+    3  clear
+    4  mkdir ~/week1
+    5  cd ~/week1
+    6  ls /usr/bin
+    7  gcc -v
+    8  ls /usr/bin | grep gcc
+    9  ls /usr/bin | grep gcc | tail -n 5
+   10  clear
+   11  echo "Hi!"
+   12  cd ~/week1
+   13  factor 6469693230 > factors_of_a_big_number.txt
+   14  cat factors_of_a_big_number.txt 
+   15  echo "Bye bye bye bye!"
+   16  clear
+   17  history
+   18  history > ex2.txt

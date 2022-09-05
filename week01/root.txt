@@ -19,6 +19,6 @@ root
 sys
 dev
 proc
-etc
 run
+etc
 tmp
