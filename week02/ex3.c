@@ -63,7 +63,7 @@ int main() {
 
   char buffer[20];
 
-  printf("Enter a number: ");
+  printf("Enter a positive integer number: ");
   fgets(buffer, 20, stdin);
   sscanf(buffer, "%llu", &number);
 
