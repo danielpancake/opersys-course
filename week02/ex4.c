@@ -38,6 +38,8 @@ void count_all(char * const string) {
 
 int main() {
   char buffer[256];
+  printf("This program prints number of occurrences of each character in the input string.\nInput: ");
+
   fgets(buffer, 256, stdin);
 
   count_all(buffer);
