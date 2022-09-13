@@ -3,6 +3,8 @@
 int main() {
   char buffer[256];
 
+  printf("This program asks the user to enter a string until dot (.) character is entered and prints its reverse with double quotation.\nEnter the string:");
+
   int i = 0;
   char c;
   
@@ -11,11 +13,13 @@ int main() {
     ++i;
   }
 
+  putchar('"');
+
   for (; i > 0; --i) {
     putchar(buffer[i - 1]);
   }
 
-  putchar('\n');
+  printf("\"\n");
 
   return 0;
 }
