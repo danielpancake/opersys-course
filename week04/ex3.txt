@@ -1,0 +1,11 @@
+After calling the program with the parameter equal to 3, the pstree printed the following heirarchy:
+───ex3─┬─ex3─┬─ex3───ex3
+       │     └─ex3
+       ├─ex3───ex3
+       └─ex3
+We can see that 8 processes have been created, and the parent process is the first one in the tree.
+
+At the beggining there is only a parent proccess that creates one child and sleep for 5 seconds.
+After that every node creates a child and sleeps for 5 seconds. This repeats n-1 times, where n is a given parameter.
+
+Resulting heirarchy is a binoomial tree of depth n.
