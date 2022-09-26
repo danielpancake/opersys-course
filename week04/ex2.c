@@ -17,7 +17,7 @@ int main() {
   int u[120], v[120];
 
   // Setting the seed for the random number generator
-  //srand(clock());
+  srand(clock());
 
   // Filling the vectors with random numbers
   for (int i = 0; i < 120; i++) {
