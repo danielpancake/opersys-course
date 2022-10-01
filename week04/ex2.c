@@ -35,6 +35,8 @@ int main() {
     return 1;
   }
 
+  pid_t pids[n];
+
   FILE * in_file, * out_file;
   in_file = fopen("temp.txt", "r");
   out_file = fopen("temp.txt", "w");
@@ -48,9 +50,12 @@ int main() {
       fprintf(out_file, "%d\n", dot_product(u, v, i*m, (i+1)*m));
       exit(0); // Terminate the child process
     } else {
-      // Waiting for child processes to finish
-      waitpid(child, NULL, 0);
+      pids[i] = child;
     }
+  }
+
+  for (int i = 0; i < n; i++) {
+    waitpid(pids[i], NULL, 0);
   }
 
   // Aggregate the results from the child processes
