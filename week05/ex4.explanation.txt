@@ -1,0 +1,2 @@
+As seen from the ex4.txt, is overall less efficient.
+However, still with higher number of threads the performance is better.

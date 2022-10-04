@@ -1,0 +1,25 @@
+Running the program with 1 thread(s)
+real 4.34
+user 4.34
+sys 0.00
+
+Running the program with 2 thread(s)
+real 2.82
+user 4.57
+sys 0.00
+
+Running the program with 4 thread(s)
+real 1.71
+user 5.25
+sys 0.00
+
+Running the program with 10 thread(s)
+real 1.08
+user 6.35
+sys 0.04
+
+Running the program with 100 thread(s)
+real 0.82
+user 5.73
+sys 0.01
+

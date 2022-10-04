@@ -1,6 +1,6 @@
-#include<pthread.h>
-#include<stdio.h>
-#include<stdlib.h>
+#include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 typedef struct Interval {
   int start;
@@ -33,19 +33,26 @@ void *prime_counter(void *arg) {
 }
 
 int main(int argc, char *argv[]) {
-  int n = atoi(argv[1]); // range [0, n)
-  int m = atoi(argv[2]); // m is the number of threads
+  int n, m;  // range [0, n) and m is the number of threads
+  if (argc != 3 || sscanf(argv[1], "%d", &n) != 1 || sscanf(argv[2], "%d", &m) != 1) {
+    fprintf(stderr, "Usage: %s <n> <m>\nwhere n is the range [0, n) and m is the number of threads\n", argv[0]);
+    return 1;
+  }
 
-  int step = n / m + (n % m != 0);
+  int remainder = n % m;
+  int step = (n - remainder) / m;
 
   pthread_t *threads = malloc(m * sizeof(pthread_t));
   Interval *intervals = malloc(m * sizeof(Interval));
 
   void **retvals = malloc(m * sizeof(void *));
 
-  for (int i = 0; i < m; ++i) {
-    intervals[i].start = i * step;
-    intervals[i].end = (i + 1) * step;
+  for (int start = 0, end = step, i = 0; i < m; ++i, start = end, end += step) {
+    if (remainder) {
+      --remainder;
+      ++end;
+    }
+    intervals[i] = (Interval){start, end};
     pthread_create(&threads[i], NULL, prime_counter, &intervals[i]);
   }
 
@@ -59,7 +66,7 @@ int main(int argc, char *argv[]) {
     total += *(int *)retvals[i];
   }
 
-  printf("Total number of primes: %d\n", total);
+  printf("There are %d primes in the interval [0, %d)\n", total, n);
 
   free(threads);
   free(intervals);

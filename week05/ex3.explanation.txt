@@ -1,0 +1,2 @@
+As can be seen from the ex3.txt, more threads give more performance boost.
+The reason is that the more threads, the more work can be done in parallel.

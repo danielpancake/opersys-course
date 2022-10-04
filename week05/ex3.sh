@@ -1,6 +1,10 @@
-gcc -pthread ex3.c -o ./ex3
-./ex3 10000000 1
-./ex3 10000000 2
-./ex3 10000000 4
-./ex3 10000000 10
-./ex3 10000000 100
+gcc -Ofast -pthread ex3.c -o ex3
+
+> ex3.txt
+
+for i in 1 2 4 10 100
+do
+  echo "Running the program with $i thread(s)" >> ex3.txt
+  time -pa -o ex3.txt ./ex3 10000000 $i
+  echo "" >> ex3.txt
+done
