@@ -1,0 +1,88 @@
+Let us compare Round-Robin algorithm with FCFS and SJF.
+We have the same sets of data as in the previous example (ex2.txt).
+
+--- Example 1: ---------------------------------------------------------------
+FCFS and SJF algorithms show the least average waiting and turnaround time
+
+FCFS
+  Average Turnaround time: 14.333333
+  Average waiting time: 6.666667
+
+SJF
+  Average Turnaround time: 14.333333
+  Average waiting time: 6.666667
+
+RR (quantum = 1)
+  Job #   AT      BT      CT      TAT     WT
+  1       0       10      22      22      12
+  2       1       5       13      12      7
+  3       4       8       23      19      11
+
+  Average Turnaround time: 17.666666
+  Average waiting time: 10
+
+RR (quantum = 5)
+  Job #   AT      BT      CT      TAT     WT
+  1       0       10      20      20      10
+  2       1       5       10      9       4
+  3       4       8       23      19      11
+
+  Average Turnaround time: 16
+  Average waiting time: 8.333333
+
+--- Example 2: ---------------------------------------------------------------
+SJF algorithm shows the least average waiting and turnaround time
+
+FCFS
+  Average Turnaround time: 7.75
+  Average waiting time: 4.75
+
+SJF
+  Average Turnaround time: 6.25
+  Average waiting time: 3.25
+
+RR (quantum = 1)
+  Job #   AT      BT      CT      TAT     WT
+  1       0       5       12      12      7
+  2       1       4       11      10      6
+  3       2       2       8       6       4
+  4       3       1       6       3       2
+
+  Average Turnaround time: 7.75
+  Average waiting time: 4.75
+
+--- Example 3: ---------------------------------------------------------------
+Once again SJF algorithm shows the least average waiting and turnaround time
+
+FCFS
+  Average Turnaround time: 10.6
+  Average waiting time: 6.6
+
+SJF
+  Average Turnaround time: 8.6
+  Average waiting time: 4.6
+
+RR (quantum = 1)
+  Job #   AT      BT      CT      TAT     WT
+  1       0       3       7       7       4
+  2       1       6       19      18      12
+  3       2       4       16      14      10
+  4       3       5       20      17      12
+  5       4       2       12      8       6
+
+  Average Turnaround time: 12.8
+  Average waiting time: 8.8
+
+RR (quantum = 5)
+  Job #   AT      BT      CT      TAT     WT
+  1       0       3       3       3       0
+  2       1       6       20      19      13
+  3       2       4       12      10      6
+  4       3       5       17      14      9
+  5       4       2       19      15      13
+
+  Average Turnaround time: 12.2
+  Average waiting time: 8.2
+
+From the results one can conclude, that SJF provides the minimum average waiting time for given set of processes.
+The average waiting time for the RR algorithm for given set of processes depends on the time quantum.

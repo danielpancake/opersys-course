@@ -1,0 +1,87 @@
+Let us have the following example sets of data:
+
+Example 1:
+  Number of processes: 3
+  Arrival time: 0  1 4
+  Burst time:   10 5 8
+
+Example 2:
+  Number of processes: 4
+  Arrival time: 0 1 2 3
+  Burst time:   5 4 2 1
+
+Example 3:
+  Number of processes: 5
+  Arrival time: 0 1 2 3 4
+  Burst time:   3 6 4 5 2
+
+Now let us compare the outputs of FCFS and SJF algorithms for the above example sets of data.
+
+--- Example 1: ---------------------------------------------------------------
+No change in average turnaround and waiting time for both FCFS and SJF.
+
+FCFS
+  Job #   AT      BT      CT      TAT     WT
+  1       0       10      10      10      0
+  2       1       5       15      14      9
+  3       4       8       23      19      11
+
+  Average Turnaround time: 14.333333
+  Average waiting time: 6.666667
+
+SJF
+  Job #   AT      BT      CT      TAT     WT
+  1       0       10      10      10      0
+  2       1       5       15      14      9
+  3       4       8       23      19      11
+
+  Average Turnaround time: 14.333333
+  Average waiting time: 6.666667
+
+--- Example 2: ---------------------------------------------------------------
+SJF has better average turnaround and waiting time than FCFS.
+
+FCFS
+  Job #   AT      BT      CT      TAT     WT
+  1       0       5       5       5       0
+  2       1       4       9       8       4
+  3       2       2       11      9       7
+  4       3       1       12      9       8
+
+  Average Turnaround time: 7.75
+  Average waiting time: 4.75
+
+SJF
+  Job #   AT      BT      CT      TAT     WT
+  1       0       5       5       5       0
+  2       1       4       12      11      7
+  3       2       2       8       6       4
+  4       3       1       6       3       2
+
+  Average Turnaround time: 6.25
+  Average waiting time: 3.25
+
+--- Example 3: ---------------------------------------------------------------
+Again SJF has better average turnaround and waiting time than FCFS.
+
+FCFS
+  Job #   AT      BT      CT      TAT     WT
+  1       0       3       3       3       0
+  2       1       6       9       8       2
+  3       2       4       13      11      7
+  4       3       5       18      15      10
+  5       4       2       20      16      14
+
+  Average Turnaround time: 10.6
+  Average waiting time: 6.6
+
+SJF
+  Job #   AT      BT      CT      TAT     WT
+  1       0       3       3       3       0
+  2       1       6       20      19      13
+  3       2       4       7       5       1
+  4       3       5       14      11      6
+  5       4       2       9       5       3
+
+  Average Turnaround time: 8.6
+  Average waiting time: 4.6
