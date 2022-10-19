@@ -1,0 +1,2 @@
+   text	   data	    bss	    dec	    hex	filename
+1063580	    512	      0	1064092	 103c9c	blender-launcher.exe
