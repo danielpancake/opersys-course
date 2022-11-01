@@ -1,0 +1,4 @@
+# Difference between a physical and a virtual address (in own words)
+Physical address is the address of the memory location in the physical memory, whereas virtual address is the address of the memory location in the virtual memory.
+
+Virtual memory is an abstraction over the physical memory, so that every process can have its own virtual memory space. The virtual memory is mapped to the physical memory by the operating system.
