@@ -40,6 +40,7 @@ int main(int argc, char *argv[]) {
       }
     }
 
+    // All comments left intentionally for debugging purposes
     if (referenced_page != NULL) {
       hits++;
     } else {
@@ -58,7 +59,7 @@ int main(int argc, char *argv[]) {
       }
 
       if (referenced_page == NULL) {
-        int min_age = sizeof(unsigned char) * 8;
+        int min_age = 128 + 1;
         int min_age_index = 0;
 
         for (int i = 0; i < nframes; i++) {
@@ -67,6 +68,9 @@ int main(int argc, char *argv[]) {
             min_age_index = i;
           }
         }
+
+        // printf("Page %u loaded into frame %d, evicting page %u\n", page_number,
+        //        min_age_index, PAGE_TABLE[min_age_index].page);
 
         referenced_page = &PAGE_TABLE[min_age_index];
 
@@ -82,6 +86,9 @@ int main(int argc, char *argv[]) {
     }
 
     referenced_page->age |= 1 << (sizeof(unsigned char) * 8 - 1);
+    // for (int i = 0; i < nframes; i++) {
+    //   printf("%u %d\n", PAGE_TABLE[i].page, PAGE_TABLE[i].age);
+    // }
   }
 
   printf("Number of page frames: %d\n", nframes);

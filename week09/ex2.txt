@@ -1,0 +1,15 @@
+# Try to construct a sequence of references that will result in increased or decreased Hit/Miss ratio
+
+One way to *increase* Hit/Miss ratio is to construct sequence in such a way that all references for the same page are grouped together. For example, the reference string 2,1,3,4,2,1,4,2,3,2 should be changed to 2,2,2,2, 1,1, 3,3, 4,4.
+
+For the given input file, this approach will result in Hit/Miss ratio of 0.6 for all number of page frames (except 0 or less).
+
+To *decrease* Hit/Miss ratio, the references should be distributed in such a way that no reference for a page is grouped together, that is the page will be flushed just before the next reference to it occurs. For example, with number of page frames of 3 the reference string 2,1,3,4,2,1,4,2,3,2 should be changed to 2,1,3,4 2,1,3,4, 2,2.
+
+For the given input file, this approach will result in the following Hit/Miss ratio:
+
+| Number of page frames | Hit/Miss ratio | Hits | Misses |
+| --------------------- | -------------- | ---- | ------ |
+| 10                    | 0.001          | 1    | 999    |
+| 50                    | 0.024          | 24   | 976    |
+| 100                   | 0.076          | 71   | 929    |
