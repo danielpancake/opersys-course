@@ -1,0 +1,3 @@
+Found files with the same inode number as file.txt:
+/home/danielpancake/opersys-course/week10/_ex2.txt - removed
+/home/danielpancake/opersys-course/week01/file.txt

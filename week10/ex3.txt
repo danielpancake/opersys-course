@@ -1,0 +1,17 @@
+-rw-r--r-- _ex3.txt - removed exec permission for all
+-rwxr--rwx _ex3.txt - granted all permissions to the owner and others
+-rwxrwxrwx _ex3.txt - made group permissions equal to user permissions
+
+--- Answering the questions ---
+What does 660 mean for ex3.txt?
+The file permissions for ex3.txt are 660. This means that the owner and group have read and write permissions, other do not have any permissions
+rw-rw----
+
+What does 775 mean for ex3.txt?
+The file permissions for ex3.txt are 775. This means that the owner and group have read, write and execute permissions, and other have read and execute permissions
+rwxrwxr-x
+
+What does 777 mean for ex3.txt?
+The file permissions for ex3.txt are 777. This means that all has read, write and execute permissions
+rwxrwxrwx
+
