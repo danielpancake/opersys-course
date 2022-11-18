@@ -1,0 +1,17 @@
+lib64
+bin
+ex2.txt
+lost+found
+lib
+ex2.out
+file2
+file1
+
+lib64
+bin
+ex2.txt
+lost+found
+lib
+ex2.out
+file2
+file1

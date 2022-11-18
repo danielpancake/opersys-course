@@ -20,7 +20,7 @@ cd $current_dir
 link ./../week01/file.txt ./_ex2.txt
 
 # Getting the inode number of the link _ex2.txt
-inode_val=$(ls -i _ex2.txt | cut -d'_' -f 1)
+inode_val=$(ls -i _ex2.txt | cut -d '_' -f 1)
 
 # Print found files with the same inode number
 found=$(find ~ -inum $inode_val)
