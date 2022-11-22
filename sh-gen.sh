@@ -8,6 +8,7 @@ do
     echo "#!/bin/bash" > $path.sh
     echo "gcc ./$file.c -o $file" >> $path.sh
     echo "./$file" >> $path.sh
+    echo "rm $file" >> $path.sh
     chmod +x $path.sh
 
     echo "Created $path.sh"
