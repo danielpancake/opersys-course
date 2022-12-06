@@ -1,0 +1,47 @@
+# Three strategies of dealing with deadlocks
+Explain step by step in which cases one strategy might be better
+
+## 1. Deadlock prevention
+- Avoiding the conditions that cause deadlocksn, by structurally negating one of them. These conditions are:
+    - Mutual exclusion
+    - Hold and wait
+    - No preemption
+    - Circular wait
+
+### Preventing "mutual exclusion"
+- Avoid assigning exclusive resources to processes
+
+### Preventing "hold and wait"
+- Require to request all needed resources at once
+- or require that a process requesting a resource must release all resources it currently holds before it can be granted the requested resource
+
+### Preventing "no preemption"
+- Virtualize resources
+
+### Preventing "circular wait"
+- Only one resource type is allowed to be requested at a time
+- or a global ordering of resources is defined
+
+
+## 2. Deadlock avoidance
+- Detecting the conditions that cause deadlocks and preventing them from occurring
+
+Deadlock can be avoided only if certain information is known about the system:
+- The maximum number of resources of each type that each process may request
+- The current allocation of resources to processes
+
+
+## 3. Deadlock detection and recovery
+Has several approaches:
+- Recovery through preemption
+- Recovery through rollback
+- Recovery through killing processes
+
+### Recovery through preemption
+- A process that is deadlocked can be preempted and its resources reassigned to other processes
+
+### Recovery through rollback
+- The system is rolled back to a previous state, before the deadlock occurred
+
+### Recovery through killing processes
+- One or more processes are killed to break the deadlock
