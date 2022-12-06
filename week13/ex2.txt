@@ -22,6 +22,9 @@ Explain step by step in which cases one strategy might be better
 - Only one resource type is allowed to be requested at a time
 - or a global ordering of resources is defined
 
+In my opinion, deadlock prevention is the best strategy as it gets the root of the problem.
+However, it is costly to implement and it may not be possible to implement at all in some cases.
+
 
 ## 2. Deadlock avoidance
 - Detecting the conditions that cause deadlocks and preventing them from occurring
@@ -29,6 +32,9 @@ Explain step by step in which cases one strategy might be better
 Deadlock can be avoided only if certain information is known about the system:
 - The maximum number of resources of each type that each process may request
 - The current allocation of resources to processes
+
+### Banker's algorithm
+- A deadlock-avoidance algorithm that tests for safety by simulating the allocation of predetermined maximum possible amounts of all resources, and then makes a "safety check" to test for possible activities that would allow the system to continue to be safe
 
 
 ## 3. Deadlock detection and recovery
@@ -39,9 +45,12 @@ Has several approaches:
 
 ### Recovery through preemption
 - A process that is deadlocked can be preempted and its resources reassigned to other processes
+The ability to take a resource away from a process, have another process use it, and then give it back without the process noticing it is highly dependent on the nature of the resource.
 
 ### Recovery through rollback
 - The system is rolled back to a previous state, before the deadlock occurred
+Performs well if the system is not too large and the rollback is not too expensive.
 
 ### Recovery through killing processes
 - One or more processes are killed to break the deadlock
+Simple, but not always possible to implement. Also, it may not be possible to determine which processes are causing the deadlock.
