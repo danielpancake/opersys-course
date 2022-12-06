@@ -264,7 +264,20 @@ int main() {
     }
 
     if (deadlock) {
-      printf("No processes can finish! Deadlock state of %d processes detected!\n", still_running);
+      printf("Deadlock state of %d processes detected:\n", still_running);
+
+      // Print processes that are still running
+      int printed = 0;
+      for (int i = 0; i < C->rows; i++) {
+        if (done_processes[i] == 0) {
+          printf("P%d", i);
+          printed++;
+          if (printed < still_running) {
+            printf(", ");
+          }
+        }
+      }
+      printf("\n");
       break;
     }
   }
